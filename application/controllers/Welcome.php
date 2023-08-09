@@ -140,7 +140,7 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function update_widget()
+	public function update_widget($param)
 	{
 		if (isset($_REQUEST["widget-name"])) {
 			$userAgent = $_SERVER['HTTP_USER_AGENT'];
@@ -167,7 +167,7 @@ class Welcome extends CI_Controller
 
 			$this->db->insert('analytic', $data);
 			echo json_encode(['success' => true, 'data' => "Record logged successfully"]);
-		} else {
+		} else if($param == 'count') {
 			$this->rate_limit->check(10, 60);
 			echo json_encode(['success' => true, 'data' => count($this->db->get('analytic')->result_array())]);
 		}

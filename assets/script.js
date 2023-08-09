@@ -179,7 +179,7 @@ $(document).ready(function() {
 });
 
 function analytic() {
-    $.get("/api/analytic", function(data, status) {
+    $.get("/api/analytic/count", function(data, status) {
         result = JSON.parse(data)
         $("#no_clicks").empty().text(result.data)
     })

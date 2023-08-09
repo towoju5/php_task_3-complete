@@ -56,6 +56,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['api/xml-export'] = 'Welcome/export';
 $route['api/analytic'] = 'Welcome/update_widget';
+$route['api/analytic/(:any)'] = 'Welcome/update_widget/$1';
 $route['api/calculate'] = 'Welcome/calculate_coins';
 $route['chat'] = 'ChatController/index';
 $route['subscribe'] = 'ChatController/get_messages';

@@ -120,21 +120,21 @@
                 </div>
             </div>
             <div class="col-md-3 mb-3">
-                <div class="bg-white mb-3">
-                    <div class="card-body text-center" data-widget-name="london-time">
+                <div class="bg-white mb-3" data-widget-name="london_time">
+                    <div class="card-body text-center">
                         <p>London Time</p>
                         <div class="h2" id="london-time"></div>
                     </div>
                 </div>
-                <div class="bg-white mb-3">
-                    <div class="card-body text-center" data-widget-name="est-time">
+                <div class="bg-white mb-3" data-widget-name="est_time">
+                    <div class="card-body text-center">
                         <p>EST Time</p>
                         <div class="h2" id="est-time"></div>
                     </div>
                 </div>
                 <!-- // bills count  -->
-                <div class="bg-white mb-3">
-                    <div class="card-body text-center" data-widget-name="bill-_counts">
+                <div class="bg-white mb-3" data-widget-name="bill_counts">
+                    <div class="card-body text-center">
                         <p class="text-center">Count # of coins</p>
                         <input type="number" class="form-control mb-3" placeholder="Enter Amount: $" step="0.01" min="0" id="amount" name="amount" required>
                         <button type="submit" class="btn btn-block btn-primary" id="calculateButton">Calculate</button>
@@ -142,8 +142,8 @@
                     </div>
                 </div>
                 <!-- // bills count  -->
-                <div class="bg-white mb-3">
-                    <div class="card-body text-center" data-widget-name="image_upload">
+                <div class="bg-white mb-3" data-widget-name="image-upload">
+                    <div class="card-body text-center">
                     <?php echo form_open_multipart('welcome/image'); ?>
                         <input accept="image/*" class="form-control" hidden type='file' name="image" id="imgInp">
                         <img id="blah" src="<?= $image ?>" alt="your image" onclick="$('#imgInp').click()" width="100%" class="py-3">
