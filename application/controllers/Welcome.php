@@ -281,10 +281,7 @@ class Welcome extends CI_Controller
 			}
 			fclose($handle);
 		}
-
-<<<<<<< HEAD
 		return $suggestions;
-=======
         // Output the XML content
         echo $xml_data;
     }
@@ -310,6 +307,5 @@ class Welcome extends CI_Controller
 			return true;
 		}
 		echo json_encode($query);
->>>>>>> fe6b33acd46739a9bdc01c036610598a520cd20c
 	}
 }

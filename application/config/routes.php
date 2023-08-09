@@ -54,22 +54,14 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 
-<<<<<<< HEAD
 $route['api/xml-export'] = 'Welcome/export';
 $route['api/analytic'] = 'Welcome/update_widget';
 $route['api/calculate'] = 'Welcome/calculate_coins';
 $route['chat'] = 'ChatController/index';
 $route['subscribe'] = 'ChatController/get_messages';
 $route['publish'] = 'ChatController/send_message';
-
 $route['stripe/stripe/handlePayment'] = 'Stripe/handlePayment';
-
-// 4242424242424242
-=======
 $route['api/analytic'] = 'Welcome/export';
-
-
 $route['publish'] = 'Welcome/sendChat';
 $route['subscribe'] = 'Welcome/getChat';
 $route['chat'] = 'Welcome/chat';
->>>>>>> fe6b33acd46739a9bdc01c036610598a520cd20c

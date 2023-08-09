@@ -4,23 +4,13 @@
 
 namespace Composer\Autoload;
 
-<<<<<<< HEAD
-class ComposerStaticInite4915c559b80e879cabd2b16d9aefab8
-{
-    public static $files = array (
-        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
-        'a9ed0d27b5a698798a89181429f162c5' => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib/Common/customFunctions.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-=======
-class ComposerStaticInita2f89b96e287f80bc6550b24c317414e
+class ComposerStaticInitde071aa853bbebf2fd65ec3fadd41342
 {
     public static $files = array (
         'a9ed0d27b5a698798a89181429f162c5' => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib/Common/customFunctions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
->>>>>>> fe6b33acd46739a9bdc01c036610598a520cd20c
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -30,10 +20,7 @@ class ComposerStaticInita2f89b96e287f80bc6550b24c317414e
         ),
         'P' => 
         array (
-<<<<<<< HEAD
-=======
             'Predis\\' => 7,
->>>>>>> fe6b33acd46739a9bdc01c036610598a520cd20c
             'PhpParser\\' => 10,
             'ParagonIE\\ConstantTime\\' => 23,
         ),
@@ -51,13 +38,10 @@ class ComposerStaticInita2f89b96e287f80bc6550b24c317414e
         array (
             0 => __DIR__ . '/..' . '/khanamiryan/qrcode-detector-decoder/lib',
         ),
-<<<<<<< HEAD
-=======
         'Predis\\' => 
         array (
             0 => __DIR__ . '/..' . '/predis/predis/src',
         ),
->>>>>>> fe6b33acd46739a9bdc01c036610598a520cd20c
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
@@ -735,17 +719,10 @@ class ComposerStaticInita2f89b96e287f80bc6550b24c317414e
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-<<<<<<< HEAD
-            $loader->prefixLengthsPsr4 = ComposerStaticInite4915c559b80e879cabd2b16d9aefab8::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite4915c559b80e879cabd2b16d9aefab8::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInite4915c559b80e879cabd2b16d9aefab8::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInite4915c559b80e879cabd2b16d9aefab8::$classMap;
-=======
-            $loader->prefixLengthsPsr4 = ComposerStaticInita2f89b96e287f80bc6550b24c317414e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita2f89b96e287f80bc6550b24c317414e::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita2f89b96e287f80bc6550b24c317414e::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInita2f89b96e287f80bc6550b24c317414e::$classMap;
->>>>>>> fe6b33acd46739a9bdc01c036610598a520cd20c
+            $loader->prefixLengthsPsr4 = ComposerStaticInitde071aa853bbebf2fd65ec3fadd41342::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitde071aa853bbebf2fd65ec3fadd41342::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitde071aa853bbebf2fd65ec3fadd41342::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitde071aa853bbebf2fd65ec3fadd41342::$classMap;
 
         }, null, ClassLoader::class);
     }

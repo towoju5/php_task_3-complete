@@ -1196,8 +1196,6 @@
             "install-path": "../phpunit/phpunit"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "predis/predis",
             "version": "v2.2.0",
             "version_normalized": "2.2.0.0",
@@ -1262,7 +1260,6 @@
             "install-path": "../predis/predis"
         },
         {
->>>>>>> fe6b33acd46739a9bdc01c036610598a520cd20c
             "name": "sebastian/cli-parser",
             "version": "1.0.1",
             "version_normalized": "1.0.1.0",
