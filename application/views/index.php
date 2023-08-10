@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <script src="/assets/jquery-3.6.0.min.js"></script>
 
-    <title>Hello, world!</title>
+    <title>Task 2.</title>
     <style>
         body {
             background-color: #2cadf5;
@@ -51,11 +51,12 @@
     <section class="container-fluid">
         <div class="row">
             <div class="col-md-3 mb-3">
-                <div class="bg-white p-3 mb-3" data-widget-name="weather-info">
-                    <div class="card-body">
-                        <div id="weatherImage"></div>
-                        <div id="weatherDegree"></div>
-                        <div id="weatherError"></div>
+                <div class="bg-white mb-3" data-widget-name="weather-info">
+                    <div class="card-body text-center">
+                        <div id="weatherImage">
+                            <img src="#" alt="#" id="img-weather">
+                        </div>
+                        <div id="weatherDegree" class="h1"></div>
                     </div>
                 </div>
                 <div class="bg-white p-3 mb-3" data-widget-name="numbers-of-clicks">

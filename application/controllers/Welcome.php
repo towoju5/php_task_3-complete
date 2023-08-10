@@ -140,7 +140,7 @@ class Welcome extends CI_Controller
 		}
 	}
 
-	public function update_widget($param)
+	public function update_widget($param=null)
 	{
 		if (isset($_REQUEST["widget-name"])) {
 			$userAgent = $_SERVER['HTTP_USER_AGENT'];
@@ -166,7 +166,7 @@ class Welcome extends CI_Controller
 			);
 
 			$this->db->insert('analytic', $data);
-			echo json_encode(['success' => true, 'data' => "Record logged successfully"]);
+			echo json_encode(['success' => true, 'data' => "Record logged successfully"]); exit;
 		} else if($param == 'count') {
 			$this->rate_limit->check(10, 60);
 			echo json_encode(['success' => true, 'data' => count($this->db->get('analytic')->result_array())]);
@@ -214,6 +214,15 @@ class Welcome extends CI_Controller
 			$config['max_height'] = 1200;
 
 			$this->load->library('upload', $config);
+			$base_path = $this->config->item('base_path'); 
+        
+			$directory_path = $base_path . 'uploads/'; 
+			if (!is_dir($directory_path)) {
+				// Create the directory if not exist
+				if (!mkdir($directory_path, 0777, true)) {
+					show_error('Failed to create the directory.');
+				}
+			}
 
 			if ($this->upload->do_upload('image')) {
 				$upload_data = $this->upload->data();
@@ -228,15 +237,15 @@ class Welcome extends CI_Controller
 				echo $error;
 			}
 		} catch (\Throwable $th) {
-			//throw $th;
+			show_error($th->getMessage());
 		}
 	}
 
 	private function fetchWeatherData()
 	{
 		$query = $this->input->get('query', true);
-		$arr = ['key' => API_KEY, 'q' =>  $query];
-		$url = 'https://api.weatherapi.com/v1/current.json?key=' . http_build_query($arr);
+		$arr = ['key' => API_KEY, 'q' =>  $query ?? 'Nigeria'];
+		$url = 'https://api.weatherapi.com/v1/current.json?' . http_build_query($arr);
 
 		$this->load->library('curl');
 		$json_response = $this->curl->simple_get($url);

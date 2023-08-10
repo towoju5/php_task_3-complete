@@ -87,4 +87,4 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 /**
  * Contants defined by Emmanuel
  */
-defined('API_KEY') OR define('API_KEY', "e9bf0ae17491478fa4f145242230808"); // Weather API key
+defined('API_KEY') OR define('API_KEY', "e393b90efa0f47d7997213243231008"); // Weather API key

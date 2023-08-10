@@ -91,34 +91,35 @@ function updateWeather() {
         })
         .then((data) => {
             // console.log(data.error);
-            if (data.error.code == 2008) {
+            if (data.error?.code == 2008) {
                 $("#weatherError").empty().append("<span class='text-danger h5'>" + data.error.message + "</span>")
                 return false;
             }
-            document.getElementById("temperature").innerText = data.current.temp_c;
-            const weatherIconElement = document.getElementById("weather-icon");
+            document.getElementById("weatherDegree").innerText = data.current.temp_c + "ºc";
+            const weatherIconElement = document.getElementById("weatherImage");
             weatherIconElement.innerHTML = "";
-            if (data.current.is_day === 1) {
-                if (data.current.condition.text.toLowerCase().includes("sunny")) {
-                    const sunImage = document.createElement("img");
-                    sunImage.src =
-                        "https://cdn-icons-png.flaticon.com/512/136/136723.png";
-                    sunImage.alt = "Sunny";
-                    weatherIconElement.appendChild(sunImage);
-                } else if (data.current.condition.text.toLowerCase().includes("rain")) {
-                    const cloudImage = document.createElement("img");
-                    cloudImage.src =
-                        "https://cdn-icons-png.flaticon.com/512/252/252035.png";
-                    cloudImage.alt = "Cloud";
-                    weatherIconElement.appendChild(cloudImage);
-                } else if (data.current.condition.text.toLowerCase().includes("snow")) {
-                    const snowflakeImage = document.createElement("img");
-                    snowflakeImage.src =
-                        "https://cdn-icons-png.flaticon.com/512/5906/5906790.png";
-                    snowflakeImage.alt = "Snowflake";
-                    weatherIconElement.appendChild(snowflakeImage);
-                }
+            if (data.current.condition.text.toLowerCase().includes("sunny")) {
+                const sunImage = document.createElement("img");
+                sunImage.src = "https://cdn-icons-png.flaticon.com/512/136/136723.png";
+                sunImage.alt = "Sunny";
+                weatherIconElement.appendChild(sunImage);
+            } else if (data.current.condition.text.toLowerCase().includes("rain")) {
+                const cloudImage = document.createElement("img");
+                cloudImage.src = "https://cdn-icons-png.flaticon.com/512/252/252035.png";
+                cloudImage.alt = "Cloud";
+                weatherIconElement.appendChild(cloudImage);
+            } else if (data.current.condition.text.toLowerCase().includes("snow")) {
+                const snowflakeImage = document.createElement("img");
+                snowflakeImage.src = "https://cdn-icons-png.flaticon.com/512/5906/5906790.png";
+                snowflakeImage.alt = "Snowflake";
+                weatherIconElement.appendChild(snowflakeImage);
+            } else {
+                const snowflakeImage = document.createElement("img");
+                snowflakeImage.src = data.current.condition.icon;
+                snowflakeImage.alt = data.current.condition.text;
+                weatherIconElement.appendChild(snowflakeImage);
             }
+            console.log(weatherIconElement);
         })
         .catch((error) => {
             console.error("Error fetching weather data:", error);
@@ -142,7 +143,6 @@ function updateTimes() {
 }
 
 function openLayerMap(lat, lon) {
-    console.log([lat, lon]);
     $('#openlayer-map').empty()
     const map = new ol.Map({
         target: 'openlayer-map',
@@ -208,9 +208,9 @@ imgInp.onchange = evt => {
 }
 
 // Update times every 5 minutes (300,000 milliseconds)
-setInterval(updateTimes, 3000000);
-setInterval(updateWeather, 300000);
-setInterval(analytic, 60000)
+setInterval(updateTimes, 30000);
+setInterval(updateWeather, 30000);
+setInterval(analytic, 30000)
 
 function callAll() {
     updateWeather();
